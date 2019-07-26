@@ -13,9 +13,11 @@ class Student
 
   def self.create_from_collection(students_array)
      students_array.each do |new_student|
-    new_student = self.new 
+     new_student = self.new
      new_student.each do |key, value|
-
+       self.send("#{key}=", value)
+     end
+     @@all << new_student
   end
 
   def add_student_attributes(attributes_hash)
