@@ -17,6 +17,7 @@ class Student
      new_student.each do |key, value|
        self.send("#{key}=", value)
      end
+   end
      @@all << new_student
   end
 
